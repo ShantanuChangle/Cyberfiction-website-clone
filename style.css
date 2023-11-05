@@ -1,0 +1,946 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+#main{
+    position: relative;
+}
+
+#nav{
+    z-index: 9;
+    position: fixed;
+    height: 8vh;
+    width: 100vw;
+    animation: navapr 1s linear 4s 1 forwards;
+    opacity: 0;
+    display: flex;
+}
+
+@keyframes navapr {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+#nav1{
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    height: 100%;
+    width: 50%;
+}
+
+#nav1>h1{
+    font-family: gilroy;
+    font-size: 1.6vw;
+    font-weight: 600;
+}
+
+#nav1>h1>span{
+    font-weight: 300;
+}
+
+#nav2{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-right: 30px;
+    gap: 20px;
+}
+
+#nav2>button{
+    padding: .5vw .7vw;
+    border-radius: 2vw;
+    background-color: #111;
+    color: white;
+    border: none;
+}
+
+#nav2>h1{
+    font-family: gilroy;
+    font-weight: 400;
+    font-size: 1vw;
+}
+
+#main{
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+}
+
+#page{
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: #F1F1F1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: all ease-out .001s;
+    animation: dispr 1s linear 4s 1 forwards;
+    z-index: 9999;
+}
+
+@keyframes dispr {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+#page>img{
+    scale: .3;
+    animation: anim 5s linear infinite forwards;
+}
+
+@keyframes anim {
+    0%{
+        rotate: 0;
+    }
+    100%{
+        rotate: 360deg;
+    }
+}
+
+#page1{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #F1F1F1;
+}
+
+#movingtext{
+    position: absolute;
+    top: 30%;
+    overflow: hidden;
+    height: 25vh;
+    width: 100vw;
+    font-family: gilroy;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+}
+
+#movingtext>h1{
+    font-size: 10vw;
+    font-weight: 300;
+    animation: movingtext 20s linear  infinite forwards;
+}
+
+#movingtext>h1>span{
+    font-weight: 600;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 1.5px;
+    color: transparent;
+}
+
+@keyframes movingtext {
+    0%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+
+#page1>p{
+    position: absolute;
+    top: 58%;
+    left: 20.5%;
+    font-size: .7vw;
+    font-family: gilroy;
+    font-weight: 500;
+    z-index: 999;
+}
+
+#page1>h4{
+    position: absolute;
+    top: 58%;
+    left: 57.5%;
+    font-size: .7vw;
+    font-family: gilroy;
+    font-weight: 500;
+    z-index: 999;
+    text-align: end;
+    letter-spacing: .00005vw;
+    word-spacing: -2px;
+}
+
+
+#page1>h3{
+    position: absolute;
+    top: 65%;
+    left: 75.4%;
+    font-size: .9vw;
+    font-family: gilroy;
+    font-weight: 700;
+}
+
+#bdiv{
+    position: absolute;
+    top: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 75px;
+    align-items: center;
+    padding-top: 10px;
+    height: 18vh;
+    width: 3vw;
+    background-color: #111;
+    opacity: 0;
+    z-index: 99;
+    animation: navapr 1s linear 4s 1 forwards;
+}
+
+#bdiv>h1{
+    font-size: 1.5vw;
+    font-family: gilroy;
+    font-weight: 800;
+    color: #ffffffe7;
+}
+
+#bdiv>h2{
+    font-size: .8vw;
+    font-family: gilroy;
+    font-weight: 700;
+    color: #ffffffcb;
+    transform: rotate(-90deg);
+    /* padding-right: 22px; */
+    padding-bottom: 8px;
+}
+
+canvas{
+    position: relative;
+    max-width: 100vw;
+    max-height: 100vh;
+    z-index: 99;
+}
+
+#page2{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #F1F1F1;
+}
+
+#page2>h1{
+    top: 33%;
+    left: 15%;
+    position: absolute;
+    font-family: gilroy;
+    font-size: 2.5vw;
+    font-weight: 700;
+}
+
+#page2>h1::before{
+    content: "CYBERFICTION / KEY WORD";
+    position: absolute;
+    font-size: .8vw;
+    font-weight: 450;
+    top: -22%;
+}
+
+#page2>h2{
+    top: 46%;
+    left: 62%;
+    position: absolute;
+    font-family: gilroy;
+    font-size: 2.5vw;
+    font-weight: 700;
+    text-align: end;
+}
+
+#page2>h2::after{
+    content: "...AND MAINTAIN GOOD HUMANITY";
+    position: absolute;
+    font-size: .8vw;
+    font-weight: 450;
+    bottom: -20%;
+    left: 40%;
+}
+
+#page3{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #F1F1F1;
+}
+
+#page3>h1{
+    top: 35%;
+    left: 15%;
+    position: absolute;
+    font-family: gilroy;
+    font-size: 3.8vw;
+    font-weight: 700;
+}
+
+#page3>h1::before{
+    content: "CYBERFICTION / HAVE FUN";
+    position: absolute;
+    font-size: .8vw;
+    font-weight: 450;
+    top: -22%;
+}
+
+#page3>p{
+    top: 52%;
+    left: 60%;
+    position: absolute;
+    font-family: gilroy;
+    font-size: .8vw;
+    font-weight: 450;
+    text-align: end;
+}
+
+#page3>h3{
+    top: 67%;
+    left: 60%;
+    position: absolute;
+    font-family: gilroy;
+    font-size: .75vw;
+    font-weight: 450;
+    text-align: end;
+    z-index: 9999;
+}
+
+#page4{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #F1F1F1;
+}
+
+
+#page4>h1{
+    position: absolute;
+    top: 46%;
+    left: 62%;
+    font-family: gilroy;
+    font-size: 3.5vw;
+    font-weight: 700;
+    text-align: end;
+}
+
+#page4>h1::before{
+    content: "CYBERFICTION / KEY WORD";
+    position: absolute;
+    font-size: 1vw;
+    font-weight: 400;
+    top: -20%;
+    right: 4%;
+}
+
+#page4>p{
+    position: absolute;
+    top: 24%;
+    left: 11%;
+    font-family: gilroy;
+    z-index: 999;
+    font-size: .8vw;
+    font-weight: 350;
+}
+
+#page4>h3{
+    position: absolute;
+    top: 38%;
+    left: 11%;
+    font-family: gilroy;
+    z-index: 999;
+    font-size: .8vw;
+    font-weight: 350;
+}
+
+#page5{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #fff;
+}
+
+#page5>h1{
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    font-size: 4vw;
+    font-family: gilroy;
+    font-weight: 800;
+    text-align: center;
+    word-spacing: 5px;
+}
+
+#page5>h1::before{
+    content:"CYBERFICTION / AVATARS";
+    position: absolute;
+    top: -15%;
+    left: 40%;
+    font-size: 1vw;
+    font-weight: 400;
+}
+
+#page5>p{
+    position: absolute;
+    top: 32%;
+    left: 20.5%;
+    font-size: .8vw;
+    font-family: gilroy;
+    font-weight: 400;
+    text-align: start;
+}
+
+#page5>h3{
+    position: absolute;
+    top: 32%;
+    left: 52%;
+    font-size: .8vw;
+    font-family: gilroy;
+    font-weight: 400;
+    text-align: start;
+}
+
+#imgsdiv{
+    position: absolute;
+    bottom: 0;
+    height: 50vh;
+    width: 100vw;
+    display: flex;
+    align-items:end;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#imgsdiv>img{
+    position: relative;
+    left: 0;
+    flex-shrink: 0;
+    height: 90%;
+    width: 22%;
+    animation: movingimgs 20s linear  infinite forwards;
+}
+
+@keyframes movingimgs {
+    0%{
+        left: -10%;
+    }
+    100%{
+        left: -100%;
+    }
+}
+
+#page6{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #171010;
+    border-bottom: 1px dotted #fff;
+}
+
+#page6>h1{
+    position: absolute;
+    top: 5%;
+    left: 40%;
+    font-size: 3.5vw;
+    font-family: gilroy;
+    font-weight: 750;
+    color: white;
+}
+
+#page6>h1::after{
+    content: "WE WILL MOVE FORWARD WITH THE COMMUNITY.";
+    position: absolute;
+    bottom: -30%;
+    left: 2%;
+    font-size: .75vw;
+    font-weight: 300;
+}
+
+#textdiv{
+    position: absolute;
+    top: 18%;
+    height: 28vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+#text{
+    position: relative;
+    height: 25vh;
+    width: 25vw;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+}
+
+
+#text>h4{
+    position: absolute;
+    top: 10%;
+    left: 8%;
+    font-size: 1vw;
+    font-weight: 400;
+    font-family: gilroy;
+    color: #111;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+
+#text>h1{
+    position: absolute;
+    top: 30%;
+    left: 8%;
+    font-size: 1vw;
+    font-weight: 800;
+    font-family: gilroy;
+    color: #111;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+
+#text>h2{
+    position: absolute;
+    top: 48%;
+    left: 8%;
+    font-size: .8vw;
+    font-weight: 550;
+    font-family: gilroy;
+    color: #111;
+}
+
+#text>h3{
+    position: absolute;
+    top: 65%;
+    left: 8%;
+    font-size: .8vw;
+    font-weight: 400;
+    font-family: gilroy;
+    color: #111;
+}
+
+#textdiv2{
+    position: absolute;
+    top: 45%;
+    height: 28vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+#textdiv3{
+    position: absolute;
+    top: 72%;
+    height: 28vh;
+    width: 100vw;
+}
+
+#textNew{
+    position: absolute;
+    left: 11.4%;
+    top: 5%;
+    height: 25vh;
+    width: 25vw;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+}
+
+
+#textNew>h4{
+    position: absolute;
+    top: 10%;
+    left: 8%;
+    font-size: 1vw;
+    font-weight: 300;
+    font-family: gilroy;
+    color: #111;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+
+#textNew>h1{
+    position: absolute;
+    top: 30%;
+    left: 8%;
+    font-size: 1vw;
+    font-weight: 800;
+    font-family: gilroy;
+    color: #111;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+
+#textNew>h2{
+    position: absolute;
+    top: 48%;
+    left: 8%;
+    font-size: .8vw;
+    font-weight: 600;
+    font-family: gilroy;
+    color: #111;
+}
+
+#textNew>h3{
+    position: absolute;
+    top: 65%;
+    left: 8%;
+    font-size: .8vw;
+    font-weight: 400;
+    font-family: gilroy;
+    color: #111;
+}
+
+
+#page7{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #171010;
+}
+
+#page7>h1{
+    position: absolute;
+    top: 10%;
+    left: 35%;
+    font-family: gilroy;
+    font-size: 3.5vw;
+    font-weight: 700;
+    color: white;
+}
+
+#page7>h1::after{
+    content: "WE STARTED, BUT WE NEED THE HELP OF THE COMMUNITY.";
+    position: absolute;
+    bottom: -20%;
+    left: 15%;
+    font-family: gilroy;
+    font-size: .8vw;
+    font-weight: 300;
+}
+
+#mtextdiv{
+    position: absolute;
+    top: 35%;
+    height: 15vh;
+    width: 100vw;
+    /* background-color: #fff; */
+    display: flex;
+    align-items: center;
+}
+
+#mtextdiv>h1{
+    position: relative;
+    font-family: gilroy;
+    font-size: 7vw;
+    font-weight: 800;
+    white-space: nowrap;
+    -webkit-text-stroke-color: #ffffffc4;
+    -webkit-text-stroke-width: 2px;
+    color: transparent;
+    animation: mtextdiv2 20s linear infinite forwards;
+}
+
+@keyframes mtextdiv2 {
+    0%{
+        left: -100%;
+    }
+    100%{
+        left: 0%;
+    }
+}
+
+#mtextdiv2{
+    position: absolute;
+    top: 50%;
+    height: 15vh;
+    width: 100vw;
+    /* background-color: #fff; */
+    display: flex;
+    align-items: center;
+}
+
+#mtextdiv2>h1{
+    position: relative;
+    font-family: gilroy;
+    font-size: 7vw;
+    font-weight: 800;
+    white-space: nowrap;
+    -webkit-text-stroke-color: #ffffffc4;
+    -webkit-text-stroke-width: 2px;
+    color: transparent;
+    animation: mtextdiv 17s linear infinite forwards;
+}
+
+@keyframes mtextdiv {
+    0%{
+        left: 0;
+    }
+    100%{
+        left: -100%;
+    }
+}
+
+#mtextdiv3{
+    position: absolute;
+    top: 65%;
+    height: 15vh;
+    width: 100vw;
+    /* background-color: #fff; */
+    display: flex;
+    align-items: center;
+}
+
+#mtextdiv3>h1{
+    position: relative;
+    font-family: gilroy;
+    font-size: 7vw;
+    font-weight: 800;
+    white-space: nowrap;
+    -webkit-text-stroke-color: #ffffffc4;
+    -webkit-text-stroke-width: 2px;
+    color: transparent;
+    animation: mtextdiv2 20s linear infinite forwards;
+}
+
+#page7>img{
+    position: absolute;
+    bottom: 0;
+    left: 33%;
+    height: 70%;
+    width: 34%;
+}
+
+#page8{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #171010;
+}
+
+#page8>h3{
+    position: absolute;
+    top: 5%;
+    left: 42%;
+    font-family: gilroy;
+    font-size: 1.5vw;
+    font-weight: 700;
+    color:#FFFFFF;
+}
+
+#page8>h3::after{
+    content: "FOUNDER / DREAMER / DESIGNER";
+    position: absolute;
+    left: 11%;
+    bottom: -80%;
+    font-family: gilroy;
+    font-size: .8vw;
+    font-weight: 500;
+}
+
+#page8>h4{
+    position: absolute;
+    top: 15%;
+    left: 37%;
+    font-family: gilroy;
+    font-size: .7vw;
+    line-height: 1vw;
+    font-weight: 400;
+    color:#FFFFFF;
+}
+
+
+#page8>h5{
+    position: absolute;
+    top: 22%;
+    left: 37%;
+    font-family: gilroy;
+    font-size: .65vw;
+    line-height: 1vw;
+    font-weight: 400;
+    color:#FFFFFF;
+}
+
+#line1{
+    position: absolute;
+    top: 42%;
+    left: 46.1%;
+    transform: rotate(90deg);
+    height: .1vh;
+    width: 8vw;
+    background-color: #fff;
+}
+
+#page8>h1{
+    position: absolute;
+    top: 55%;
+    left: 17%;
+    font-family: gilroy;
+    font-size: 3.5vw;
+    font-weight: 800;
+    color: #fff;
+    text-align: center;
+}
+
+#page8>p{
+    font-size: .8vw;
+    color: #fff;
+    font-family: gilroy;
+    font-weight: 400;
+    position: absolute;
+    bottom: 5%;
+    left: 23%;
+}
+
+#page8>h6{
+    font-size: .8vw;
+    color: #fff;
+    font-family: gilroy;
+    font-weight: 400;
+    position: absolute;
+    bottom: 8%;
+    left: 53%;
+}
+
+#page9{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #171010;
+}
+
+#line2{
+    position: absolute;
+    top: 15%;
+    left: 46.1%;
+    transform: rotate(90deg);
+    height: .1vh;
+    width: 8vw;
+    background-color: #fff;
+}
+
+#twitter{
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    height: 2vw;
+    width: 13vw;
+    border-radius: 20px;
+    border: 1px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+}
+
+#twitter>h1{
+    font-family: gilroy;
+    font-weight: 500;
+    font-size: 1vw;
+    color: #fff;
+}
+
+#twitter:hover{
+    background-color: #fff;
+}
+
+#twitter:hover h1{
+    color: #111;
+}
+
+
+#insta{
+    position: absolute;
+    top: 30%;
+    left: 53%;
+    height: 2vw;
+    width: 13vw;
+    border-radius: 20px;
+    border: 1px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+}
+
+#insta>h1{
+    font-family: gilroy;
+    font-weight: 500;
+    font-size: 1vw;
+    color: #fff;
+}
+
+#insta:hover{
+    background-color: #fff;
+}
+
+#insta:hover h1{
+    color: #111;
+}
+
+#page9>h1{
+    position: absolute;
+    left: 11%;
+    top: 42%;
+    font-family: gilroy;
+    font-size: 10.5vw;
+    line-height: 9vw;
+    font-weight: 700;
+    text-align: center;
+    color: transparent;
+    -webkit-text-stroke-color: #fff;
+    -webkit-text-stroke-width: 2px;
+    transform: skew(-10deg);
+}
+
+#page9>h2{
+    font-family: gilroy;
+    font-size: .8vw;
+    font-weight: 400;
+    color: #fff;
+    position: absolute;
+    bottom: 15%;
+    left: 46%;
+}
+
+#page9>h3{
+    font-family: gilroy;
+    font-size: .8vw;
+    font-weight: 400;
+    color: #fff;
+    position: absolute;
+    bottom: 8%;
+    left: 40%;
+}
+
+#page9>h4{
+    font-family: gilroy;
+    font-size: .8vw;
+    font-weight: 400;
+    color: #fff;
+    position: absolute;
+    bottom: 8%;
+    left: 53%;
+}
